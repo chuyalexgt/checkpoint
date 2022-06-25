@@ -8,6 +8,7 @@ import Components from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import Unocss from 'unocss/vite'
 import { quasar, transformAssetUrls } from '@quasar/vite-plugin'
+import { shortcuts } from './shortcuts'
 
 export default defineConfig({
   resolve: {
@@ -49,7 +50,9 @@ export default defineConfig({
 
     // https://github.com/antfu/unocss
     // see unocss.config.ts for config
-    Unocss(),
+    Unocss({
+      shortcuts: { ...shortcuts },
+    }),
   ],
 
   // https://github.com/vitest-dev/vitest
