@@ -28,9 +28,40 @@ app.use(Quasar, {
     'index',
   ],
 })
+
+function wait(duration: number) {
+  return new Promise(resolve => setTimeout(resolve, duration))
+}
+
+async function tryScrollToAnchor(hash: string, timeout = 1000, delay = 100) {
+  while (timeout > 0) {
+    const el = document.querySelector(hash)
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' })
+      break
+    }
+    await wait(delay)
+    timeout = timeout - delay
+  }
+}
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes,
+  scrollBehavior(to: any, from: any, savedPosition: any) {
+    if (to.hash) {
+      // Required because our <RouterView> is wrapped in a <Transition>
+      // So elements are mounted after a delay
+      tryScrollToAnchor(to.hash, 1000, 100)
+    }
+    else if (savedPosition) {
+      return savedPosition
+    }
+    else {
+      return { x: 0, y: 0 }
+    }
+  },
+
 })
 app.use(VueAxios, axios)
 

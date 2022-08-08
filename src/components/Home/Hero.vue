@@ -12,9 +12,9 @@
           Restaurants, museums, malls... anything you want to remember, here, all together
         </p>
 
-        <button primary_btn text-2xl mt-8>
+        <router-link primary_btn text-2xl mt-8 to="/auth">
           Let's started
-        </button>
+        </router-link>
       </div>
       <div class="w-2/3 md:w-1/3">
         <lottie-player src="~/../assets/Hero_City_lottie.json" autoplay loop bounce speed="0.5" />

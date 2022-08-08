@@ -1,8 +1,12 @@
 <template>
   <main font-sans text="center gray-700 dark:gray-200">
     <Header />
-    <section sm:p="x-4 y-2" class="h-max-[100vh-72px] overflow-auto">
-      <router-view />
+    <section sm:p="x-4 y-2">
+      <router-view v-slot="{ Component }">
+        <transition name="slide" mode="out-in">
+          <component :is="Component" :key="$route.path" />
+        </transition>
+      </router-view>
       <Footer />
     </section>
   </main>
@@ -33,5 +37,14 @@
 100% {
     background-position: 0% 50%;
 }
+}
+
+.slide-enter-active, .slide-leave-active{
+  transition: opacity 0.6s, transform 0.8s;
+}
+
+.slide-enter-from, .slide-leave-to{
+  opacity: 0;
+  transform: translateY(-50%)
 }
 </style>
