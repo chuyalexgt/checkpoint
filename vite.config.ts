@@ -1,6 +1,6 @@
 /// <reference types="vitest" />
 
-import path from 'path'
+import { resolve } from 'path'
 import { defineConfig } from 'vite'
 import Vue from '@vitejs/plugin-vue'
 import Pages from 'vite-plugin-pages'
@@ -13,7 +13,7 @@ import { shortcuts } from './shortcuts'
 export default defineConfig({
   resolve: {
     alias: {
-      '~/': `${path.resolve(__dirname, 'src')}/`,
+      '~/': `${resolve(__dirname, 'src')}/`,
     },
   },
   plugins: [
@@ -26,7 +26,21 @@ export default defineConfig({
     }),
 
     // https://github.com/hannoeru/vite-plugin-pages
-    Pages(),
+    Pages({
+      extendRoute(route) {
+        // rutas que no requieren autrenticacion
+        if (route.path === '/') {
+          // Index is unauthenticated.
+          return route
+        }
+
+        // todas las demas requiren autenticacion
+        return {
+          ...route,
+          meta: { auth: true },
+        }
+      },
+    }),
 
     // https://github.com/antfu/unplugin-auto-import
     AutoImport({
@@ -52,6 +66,11 @@ export default defineConfig({
     // see unocss.config.ts for config
     Unocss({
       shortcuts: { ...shortcuts },
+      rules: [
+        ['gradient-rotate', { animation: '30s ease 0s infinite normal none running gradient-rotate' }],
+        ['h-head', { 'min-height': 'calc(100vh - 90px)' }],
+        ['cool-gradient', { background: 'linear-gradient(-45deg, #0061ff, #60efff, #0061ff, #43c6ac) 0% 0% / 400% 400%;' }],
+      ],
     }),
   ],
 

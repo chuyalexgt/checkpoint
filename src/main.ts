@@ -12,7 +12,7 @@ import './styles/main.css'
 import 'uno.css'
 
 import '@quasar/extras/material-icons/material-icons.css'
-
+import '@lottiefiles/lottie-player'
 import 'quasar/src/css/index.sass'
 
 const app = createApp(App)
