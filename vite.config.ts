@@ -70,6 +70,12 @@ export default defineConfig({
         ['gradient-rotate', { animation: '30s ease 0s infinite normal none running gradient-rotate' }],
         ['h-head', { 'min-height': 'calc(100vh - 90px)' }],
         ['cool-gradient', { background: 'linear-gradient(-45deg, #0061ff, #60efff, #0061ff, #43c6ac) 0% 0% / 400% 400%;' }],
+        ['glass-effect', {
+          'background': 'linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.0))',
+          'backdrop-filter': 'blur(20px)',
+          'box-shadow': '0 8px 12px 0 rgba(0, 0, 0, 0.37)',
+          'border': '1px solid rgba(255, 255, 255, 0.18)',
+        }],
       ],
     }),
   ],

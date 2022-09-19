@@ -7,29 +7,25 @@ interface Feature {
 
 const featuresList: Feature[] = [
   {
-    title: 'Keep track of your favorite places',
-    text: 'Save all the data related to your favorite places, such as menus, photos, recommendations, and schedules',
-    icon: 'i-carbon-save',
+    title: 'Encuentra grupos de estudio',
+    text: 'Grupos de estudio de acuerdo con tus temas de interés, en los cuales podrás compartir tus conocimientos y aprender de los demás',
+    icon: 'i-carbon-book',
   },
   {
-    title: 'Rate your favorite places and share your experience',
-    text: 'Rate the experience, share photos and comments of the places you visit',
-    icon: 'i-carbon-star',
+    title: 'Comparte tus experiencias con la comunidad',
+    text: 'Porque no todo es estudio, comparte esos momentos memorables con la comunidad',
+    icon: 'i-carbon-events-alt',
   },
   {
-    title: 'Share with your friends',
-    text: 'Share your experience with your friends and discover new places',
-    icon: 'i-carbon-share',
+    title: 'Haz nuevos amigos',
+    text: 'Conecta con personas que compartan tus gustos y crea una sólida amistad',
+    icon: 'i-carbon-friendship',
   },
 ]
 </script>
 
 <template>
   <section my-8 px-3>
-    <p text="~ 2xl sm:3xl" mb-20>
-      You don't know what to do today? <br>
-      Seek on your checkpoints
-    </p>
     <div class="my-6 flex justify-center gap-15">
       <FeatureCard
         v-for="(feature, index) in featuresList"

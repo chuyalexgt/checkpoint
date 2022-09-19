@@ -8,12 +8,12 @@ const router = useRouter()
     <div class="flex flex-col items-center">
       <div i-carbon-sailboat-offshore text-8xl class="w-52 dark:bg-light-blue-700 bg-light-blue-500" />
       <p text="~ 2xl" font-extrabold>
-        Oops it looks like you're lost
+        Oops, parece que te has perdido
       </p>
       <button primary_btn @click="router.push('/')">
         <p i-carbon-home text="~ 2xl" class="font-extrabold m-0" />
         <p text="~ xl" m-0>
-          Go back home
+          Menu Principal
         </p>
       </button>
     </div>

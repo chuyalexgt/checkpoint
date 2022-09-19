@@ -4,16 +4,16 @@
 <template>
   <section class="cool-gradient gradient-rotate h-head md:h-75vh md:min-h-0" section>
     <div class="flex items-center flex-col-reverse md:flex-row">
-      <div class="md:w-2/3 gap-3">
+      <div class="md:w-2/3 gap-3 px-4">
         <p text="~ 4xl warm-gray-700" font="extrabold">
-          Gather your favorite places
+          Encuentra tu comunidad
         </p>
         <p text="~ 2xl warm-gray-700" font="semibold">
-          Restaurants, museums, malls... anything you want to remember, here, all together
+          Estudiantes de distintas carrera y universidades, todos reunidos en un mismo lugar
         </p>
 
-        <router-link primary_btn text-2xl mt-8 to="/auth">
-          Let's started
+        <router-link primary_btn text-2xl mt-8 to="/auth/login">
+          Ingresar
         </router-link>
       </div>
       <div class="w-2/3 md:w-1/3">

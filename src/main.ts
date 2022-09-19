@@ -1,5 +1,5 @@
 import { createApp } from 'vue'
-import { Loading, Quasar } from 'quasar'
+import { Loading, Notify, Quasar } from 'quasar'
 import { createRouter, createWebHistory } from 'vue-router'
 import routes from 'virtual:generated-pages'
 import { createPinia } from 'pinia'
@@ -19,9 +19,12 @@ const app = createApp(App)
 app.use(Quasar, {
   plugins: {
     Loading,
+    Notify,
   },
   config: {
     loading: { /* look at QuasarConfOptions from the API card */ },
+    notify: { /* look at QuasarConfOptions from the API card */ },
+
   },
   boot: [
     // references /src/boot/<name>.js
