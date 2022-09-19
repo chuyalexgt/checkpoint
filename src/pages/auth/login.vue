@@ -4,7 +4,6 @@ import { useMainStore } from '~/stores/mainStore'
 const mainStore = useMainStore()
 const { login } = mainStore
 const isPwd = ref(true)
-const showCarrusel = ref(true)
 
 const email = ref('')
 const password = ref('')
@@ -18,16 +17,16 @@ const validate = async () => {
     if (response?.status === 'error')
       return response
 
-    showCarrusel.value = false
+    mainStore.authSuccess = true
   }
   catch (error) {
-    showCarrusel.value = true
+    mainStore.authSuccess = false
   }
 }
 </script>
 
 <template>
-  <section class="flex flex-col w-3/4 items-center p-4">
+  <section class="flex flex-col w-3/4 items-center p-4 transition-all max-w-500px">
     <div w-full>
       <div text="~ 3xl" font-extrabold class="flex gap-2 justify-center">
         <div i-carbon-chart-spiral bg-light-blue-500 />
@@ -41,6 +40,7 @@ const validate = async () => {
       <q-input
         v-model="email"
         outlined
+        input-style="dark:text-white"
         lazy-rules
         label="Correo*"
         :rules="[(val) => val.includes('@')]"
@@ -65,7 +65,7 @@ const validate = async () => {
         </template>
       </q-input>
     </div>
-    <div class="flex justify-center h-60px m-2 w-full">
+    <div class="flex justify-center  m-2 w-full">
       <AsyncBtn
         :callback-on-click="validate"
         success-msj="¡Acceso correcto!, Bienvenido"
@@ -73,11 +73,10 @@ const validate = async () => {
         :disabled="!canLogin"
       />
     </div>
-    <!-- esto no funciona -->
     <div class=" w-full">
       <a
         href="/"
-        class="decoration-none text-dark-700 hover:text-blue-600 hover:underline underline-offset-1 transition-all duration-300"
+        class="decoration-none text-dark-700 dark:text-white hover:text-blue-600 hover:underline underline-offset-1 transition-all duration-300"
       >¿Olvidaste tu contraseña?</a>
     </div>
   </section>

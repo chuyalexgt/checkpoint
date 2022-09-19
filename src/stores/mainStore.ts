@@ -7,13 +7,13 @@ export const useMainStore = defineStore({
   id: 'mainStore',
   state: () =>
     ({
-      selectedMembership: 'basic',
+      authSuccess: false,
     } as mainStore),
 
   actions: {
     async login(email: string, password: string) {
       try {
-        throw 'usuario pendejo'
+        // throw 'usuario pendejo'
         console.log(email, password)
         return { status: 'lo que sea' }
       }
