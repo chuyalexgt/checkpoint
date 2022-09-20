@@ -39,6 +39,7 @@ const validate = async () => {
     <div class="flex flex-col gap-4 py-4 w-full">
       <q-input
         v-model="email"
+        :dark="isDark"
         outlined
         input-style="dark:text-white"
         lazy-rules
@@ -48,6 +49,7 @@ const validate = async () => {
       />
       <q-input
         v-model="password"
+        :dark="isDark"
         :rules="[(val) => val !== '']"
         outlined
         lazy-rules

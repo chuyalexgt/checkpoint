@@ -21,7 +21,7 @@ const mainStore = useMainStore()
       <!-- </transition> -->
     </div>
     <div
-      flex-1 flex justify-center items-center h-full rounded-r-xl transition-all duration-900 class="max-h-750px"
+      flex-1 flex justify-center items-center h-full rounded-r-xl dark:bg-gray-900 transition-all duration-600 class="max-h-750px"
       :class="mainStore.authSuccess && '!shadow-lg rounded-xl'"
     >
       <router-view v-slot="{ Component }">
