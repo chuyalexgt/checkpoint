@@ -25,7 +25,6 @@ export const useMainStore = defineStore({
     },
     async signIn(email: string, password: string) {
       try {
-        // throw 'usuario pendejo e inexistente'
         console.log(email, password)
         return { status: 'lo que sea' }
       }
