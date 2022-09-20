@@ -2,20 +2,26 @@
 import { useMainStore } from '~/stores/mainStore'
 
 const mainStore = useMainStore()
-const { login } = mainStore
+const { login, signIn } = mainStore
 const isPwd = ref(true)
 
-const email = ref('')
-const password = ref('')
+const email = $ref('')
+const password = $ref('')
+const passwordConfirm = $ref('')
+
 const canLogin = computed(() => {
-  return email.value.includes('@') && password.value.length > 0
+  return email.includes('@') && password.length > 0 && password === passwordConfirm
 })
 
 const validate = async () => {
   try {
-    const response = await login(email.value, password.value)
-    if (response?.status === 'error')
-      return response
+    const response1 = await signIn(email, password)
+    if (response1?.status === 'error')
+      return response1
+
+    const response2 = await login(email, password)
+    if (response2?.status === 'error')
+      return response2
 
     mainStore.authSuccess = true
   }
@@ -33,7 +39,7 @@ const validate = async () => {
         <div>Checkpoint</div>
       </div>
       <h2 class="mt-6 text-center text-xl tracking-tight font-bold text-blue-700">
-        Ingresa a tu cuenta
+        Crea tu cuenta
       </h2>
     </div>
     <div class="flex flex-col gap-4 py-4 w-full">
@@ -41,6 +47,7 @@ const validate = async () => {
         v-model="email"
         :dark="isDark"
         outlined
+        dense
         input-style="dark:text-white"
         lazy-rules
         label="Correo*"
@@ -52,11 +59,32 @@ const validate = async () => {
         :dark="isDark"
         :rules="[(val) => val !== '']"
         outlined
+        dense
         lazy-rules
         label="Contraseña*"
         :type="isPwd ? 'password' : 'text'"
         required
         error-message="La contraseña es obligatoria"
+      >
+        <template #append>
+          <q-icon
+            :name="isPwd ? 'visibility_off' : 'visibility'"
+            class="cursor-pointer"
+            @click="isPwd = !isPwd"
+          />
+        </template>
+      </q-input>
+      <q-input
+        v-model="passwordConfirm"
+        :dark="isDark"
+        :rules="[(val) => val === password]"
+        outlined
+        dense
+        lazy-rules
+        label="Confirmar contraseña*"
+        :type="isPwd ? 'password' : 'text'"
+        required
+        error-message="La contraseña no coincide"
       >
         <template #append>
           <q-icon

@@ -21,5 +21,15 @@ export const useMainStore = defineStore({
         return { status: 'error', message: error }
       }
     },
+    async signIn(email: string, password: string) {
+      try {
+        // throw 'usuario pendejo e inexistente'
+        console.log(email, password)
+        return { status: 'lo que sea' }
+      }
+      catch (error) {
+        return { status: 'error', message: error }
+      }
+    },
   },
 })
