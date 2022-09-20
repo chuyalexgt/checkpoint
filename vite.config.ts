@@ -8,6 +8,7 @@ import Components from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import Unocss from 'unocss/vite'
 import { quasar, transformAssetUrls } from '@quasar/vite-plugin'
+import { QuasarResolver } from 'unplugin-vue-components/resolvers'
 import { shortcuts } from './shortcuts'
 
 export default defineConfig({
@@ -60,6 +61,9 @@ export default defineConfig({
     // https://github.com/antfu/vite-plugin-components
     Components({
       dts: true,
+      resolvers: [
+        QuasarResolver(),
+      ],
     }),
 
     // https://github.com/antfu/unocss

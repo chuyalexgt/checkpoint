@@ -3,7 +3,7 @@
   "packageManager": "pnpm@7.1.5",
   "scripts": {
     "build": "vite build",
-    "dev": "vite --port 3333 --open",
+    "dev": "set VITE_API_URL=http://localhost:9009&&vite --port 3333 --open",
     "lint": "eslint .",
     "typecheck": "vue-tsc --noEmit",
     "preview": "vite preview",

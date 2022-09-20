@@ -1,6 +1,6 @@
-/* eslint-disable no-throw-literal */
 /* eslint-disable no-console */
 import { defineStore } from 'pinia'
+import { loginByEmail } from '~/api/user'
 import type { mainStore } from '~/interfaces/mainStore'
 
 export const useMainStore = defineStore({
@@ -8,17 +8,19 @@ export const useMainStore = defineStore({
   state: () =>
     ({
       authSuccess: false,
+      userJwt: '',
     } as mainStore),
 
   actions: {
     async login(email: string, password: string) {
       try {
-        // throw 'usuario pendejo'
-        console.log(email, password)
-        return { status: 'lo que sea' }
+        const { data } = await loginByEmail(email, password)
+        this.userJwt = data.jwtToken
+        localStorage.setItem('userJwt', this.userJwt)
       }
-      catch (error) {
-        return { status: 'error', message: error }
+      catch (error: any) {
+        console.log(error.response.data.message)
+        return { status: 'error', message: error.response.data.message }
       }
     },
     async signIn(email: string, password: string) {

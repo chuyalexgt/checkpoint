@@ -10,6 +10,7 @@ import App from './App.vue'
 import '@unocss/reset/tailwind.css'
 import './styles/main.css'
 import 'uno.css'
+import './boot/index'
 
 import '@quasar/extras/material-icons/material-icons.css'
 import '@lottiefiles/lottie-player'
