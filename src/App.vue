@@ -1,5 +1,5 @@
 <template>
-  <main font-sans text="center gray-700 dark:gray-200">
+  <main font-sans text="center gray-700 dark:gray-200 relative">
     <Header />
     <section sm:p="x-4 y-2">
       <router-view v-slot="{ Component }">
@@ -7,8 +7,8 @@
           <component :is="Component" :key="$route.path" />
         </transition>
       </router-view>
-      <Footer />
     </section>
+    <Footer />
   </main>
 </template>
 

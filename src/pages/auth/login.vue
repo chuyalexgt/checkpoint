@@ -84,7 +84,7 @@ const validate = async () => {
     <div border-gray-300 dark:border-white border-t-4 w-full rounded my-4 />
     <div class=" w-full">
       <a
-        href="/auth/signIn"
+        href="./signIn"
         class="decoration-none text-dark-700 dark:text-white hover:text-blue-600 hover:underline underline-offset-1 transition-all duration-300"
       >¿No tienes una cuenta?, Crear cuenta</a>
     </div>
