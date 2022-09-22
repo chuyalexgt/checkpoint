@@ -1,6 +1,7 @@
 /* eslint-disable no-console */
 import { defineStore } from 'pinia'
-import { loginByEmail } from '~/api/user'
+import { createUser, getUser, loginByEmail } from '~/api/user'
+import { api } from '~/boot'
 import type { mainStore } from '~/interfaces/mainStore'
 
 export const useMainStore = defineStore({
@@ -9,14 +10,34 @@ export const useMainStore = defineStore({
     ({
       authSuccess: false,
       userJwt: '',
+      userData: null,
+      sessionIsExpired: false,
     } as mainStore),
 
   actions: {
+    setHeaders() {
+      api.defaults.headers.common.authorization = this.userJwt
+    },
+    async getUserData() {
+      try {
+        const response = await getUser()
+        this.userData = response.data
+      }
+      catch (error) {
+        this.sessionIsExpired = true
+        setTimeout(() => {
+          this.logout()
+          return { status: 'error', message: 'La sesión ha expirado' }
+        }, 3000)
+      }
+    },
     async login(email: string, password: string) {
       try {
         const { data } = await loginByEmail(email, password)
         this.userJwt = data.jwtToken
         localStorage.setItem('userJwt', this.userJwt)
+        this.setHeaders()
+        this.getUserData()
       }
       catch (error: any) {
         console.log(error.response.data.message)
@@ -25,12 +46,16 @@ export const useMainStore = defineStore({
     },
     async signIn(email: string, password: string) {
       try {
-        console.log(email, password)
-        return { status: 'lo que sea' }
+        await createUser(email, password)
       }
-      catch (error) {
-        return { status: 'error', message: error }
+      catch (error: any) {
+        const errorMsj = error.response.data.message.split('user validation failed: email:')
+        return { status: 'error', message: errorMsj }
       }
+    },
+    logout() {
+      localStorage.removeItem('userJwt')
+      window.location.replace('/')
     },
   },
 })

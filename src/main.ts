@@ -15,6 +15,7 @@ import './boot/index'
 import '@quasar/extras/material-icons/material-icons.css'
 import '@lottiefiles/lottie-player'
 import 'quasar/src/css/index.sass'
+import { useMainStore } from './stores/mainStore'
 
 const app = createApp(App)
 app.use(Quasar, {
@@ -66,6 +67,28 @@ const router = createRouter({
     }
   },
 
+})
+
+router.beforeEach((to, from, next) => {
+  const mainStore = useMainStore()
+
+  if (!mainStore.userJwt) {
+    const token = localStorage.getItem('userJwt')
+    if (token) {
+      mainStore.userJwt = token
+      mainStore.setHeaders()
+      mainStore.getUserData()
+    }
+  }
+  else {
+    mainStore.setHeaders()
+    mainStore.getUserData()
+  }
+
+  const restrictedRoute = to.matched.some(record => record.meta.requireAuth)
+  if (restrictedRoute && !mainStore.userJwt)
+    next('auth/login')
+  else next()
 })
 app.use(VueAxios, axios)
 
