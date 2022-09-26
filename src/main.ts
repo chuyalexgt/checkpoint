@@ -86,10 +86,12 @@ router.beforeEach((to, from, next) => {
     mainStore.getUserData()
   }
 
-  const restrictedRoute = to.matched.some(record => record.meta.requireAuth)
+  const restrictedRoute = to.matched.some(record => record.meta.auth)
   if (restrictedRoute && !mainStore.userJwt)
-    next('auth/login')
-  else next()
+    next({ name: 'auth-login' })
+
+  else
+    next()
 })
 app.use(VueAxios, axios)
 
