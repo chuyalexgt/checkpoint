@@ -11,7 +11,7 @@ import { quasar, transformAssetUrls } from '@quasar/vite-plugin'
 import { QuasarResolver } from 'unplugin-vue-components/resolvers'
 import { shortcuts } from './shortcuts'
 
-const freeRoutes = ['/', '/auth', 'login', 'signIn'] // Rutas que no requiren validacion
+const freeRoutes = ['/', '/auth', 'login', 'signin'] // Rutas que no requiren validacion
 
 export default defineConfig({
   resolve: {

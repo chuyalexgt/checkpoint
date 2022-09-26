@@ -1,7 +1,7 @@
 <template>
   <main font-sans text="center gray-700 dark:gray-200 relative">
     <Header />
-    <section sm:p="x-4 y-2" class="flex min-h-[calc(100vh-72px)]">
+    <section sm:p="x-4 y-2" class="flex min-h-[calc(100vh-130px)]">
       <div flex-1>
         <router-view v-slot="{ Component }">
           <transition name="slide" mode="out-in">
@@ -9,8 +9,8 @@
           </transition>
         </router-view>
       </div>
-      <Footer />
     </section>
+    <Footer />
   </main>
 </template>
 
