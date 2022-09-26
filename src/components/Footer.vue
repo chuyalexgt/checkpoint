@@ -1,5 +1,5 @@
 <template>
-  <section flex justify-center items-center absolute bottom-0 w-full py-4>
+  <section flex justify-center items-center w-full py-4>
     <nav text-xl inline-flex gap-2>
       <button icon-btn @click="toggleDark()">
         <div dark:i-carbon-moon i-carbon-sun />

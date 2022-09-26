@@ -11,6 +11,8 @@ import { quasar, transformAssetUrls } from '@quasar/vite-plugin'
 import { QuasarResolver } from 'unplugin-vue-components/resolvers'
 import { shortcuts } from './shortcuts'
 
+const freeRoutes = ['/', '/auth', 'login', 'signIn'] // Rutas que no requiren validacion
+
 export default defineConfig({
   resolve: {
     alias: {
@@ -30,7 +32,8 @@ export default defineConfig({
     Pages({
       extendRoute(route) {
         // rutas que no requieren autrenticacion
-        if (route.path === '/') {
+        // console.log(route)
+        if (freeRoutes.includes(route.path)) {
           // Index is unauthenticated.
           return route
         }

@@ -1,14 +1,16 @@
 <template>
   <main font-sans text="center gray-700 dark:gray-200 relative">
     <Header />
-    <section sm:p="x-4 y-2">
-      <router-view v-slot="{ Component }">
-        <transition name="slide" mode="out-in">
-          <component :is="Component" :key="$route.path" />
-        </transition>
-      </router-view>
+    <section sm:p="x-4 y-2" class="flex min-h-[calc(100vh-72px)]">
+      <div flex-1>
+        <router-view v-slot="{ Component }">
+          <transition name="slide" mode="out-in">
+            <component :is="Component" :key="$route.path" />
+          </transition>
+        </router-view>
+      </div>
+      <Footer />
     </section>
-    <Footer />
   </main>
 </template>
 
