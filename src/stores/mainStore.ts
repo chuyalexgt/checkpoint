@@ -38,6 +38,9 @@ export const useMainStore = defineStore({
         localStorage.setItem('userJwt', this.userJwt)
         this.setHeaders()
         this.getUserData()
+        setTimeout(() => {
+          window.location.replace('/user')
+        }, 2000)
       }
       catch (error: any) {
         console.log(error.response.data.message)

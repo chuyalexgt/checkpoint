@@ -72,7 +72,7 @@ const router = createRouter({
 router.beforeEach((to, from, next) => {
   const mainStore = useMainStore()
 
-  if (!mainStore.userJwt) {
+  if (!mainStore.userJwt || !mainStore.userData) {
     const token = localStorage.getItem('userJwt')
     if (token) {
       mainStore.userJwt = token

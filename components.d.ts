@@ -12,8 +12,11 @@ declare module '@vue/runtime-core' {
     FeatureCard: typeof import('./src/components/Home/FeatureCard.vue')['default']
     Features: typeof import('./src/components/Home/Features.vue')['default']
     Footer: typeof import('./src/components/Footer.vue')['default']
+    FriendReqCard: typeof import('./src/components/globals/FriendReqCard.vue')['default']
     Header: typeof import('./src/components/Header.vue')['default']
     Hero: typeof import('./src/components/Home/Hero.vue')['default']
+    OptionsBtn: typeof import('./src/components/globals/OptionsBtn.vue')['default']
+    RequestCard: typeof import('./src/components/globals/RequestCard.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }

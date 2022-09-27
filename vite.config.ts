@@ -83,6 +83,7 @@ export default defineConfig({
           'box-shadow': '0 8px 12px 0 rgba(0, 0, 0, 0.37)',
           'border': '1px solid rgba(255, 255, 255, 0.18)',
         }],
+        ['autogrid', { 'display': 'grid', 'grid-template-columns': 'repeat(auto-fit, minmax(100px,1fr))', 'gap': '10px' }],
       ],
     }),
   ],
