@@ -31,6 +31,7 @@ const actions: Action[] = [
       </template>
     </RequestCard>
     <CircularMenu /> -->
-    <Carrusel :images="['https://picsum.photos/500', 'https://picsum.photos/501']" />
+    <!-- <Carrusel :images="['https://picsum.photos/500', 'https://picsum.photos/501']" /> -->
+    <PostCard />
   </section>
 </template>
