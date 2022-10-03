@@ -84,6 +84,7 @@ export default defineConfig({
           'border': '1px solid rgba(255, 255, 255, 0.18)',
         }],
         ['autogrid', { 'display': 'grid', 'grid-template-columns': 'repeat(auto-fit, minmax(100px,1fr))', 'gap': '10px' }],
+        ['hide', { display: 'none' }],
       ],
     }),
   ],

@@ -8,6 +8,8 @@ export {}
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     AsyncBtn: typeof import('./src/components/globals/AsyncBtn.vue')['default']
+    Carrusel: typeof import('./src/components/globals/Carrusel.vue')['default']
+    CircularMenu: typeof import('./src/components/globals/CircularMenu.vue')['default']
     Counter: typeof import('./src/components/Counter.vue')['default']
     FeatureCard: typeof import('./src/components/Home/FeatureCard.vue')['default']
     Features: typeof import('./src/components/Home/Features.vue')['default']
