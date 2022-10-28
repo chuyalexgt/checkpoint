@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import gsap from 'gsap'
-const props = defineProps<{ number: number; lowRange?: number }>()
+const props = defineProps<{ number: number; lowRange?: number; decimals?: number }>()
 
 const { number, lowRange } = $(props)
 const tweened = reactive({
@@ -20,6 +20,6 @@ watch($$(number), (n) => {
 
 <template>
   <p class="text-xl font-bold" :class="rangeClass">
-    {{ tweened.number.toFixed(0) }}
+    {{ decimals ? tweened.number.toFixed(decimals) : tweened.number }}
   </p>
 </template>
