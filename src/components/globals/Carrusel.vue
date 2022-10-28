@@ -63,11 +63,10 @@ onMounted(() => {
     <q-dialog v-model="maximizeImg">
       <section
         ref="carrusel"
-        class="w-full max-w-900px h-full relative overflow-auto snap-x  flex !flex-nowrap rounded-xl snap-mandatory"
-        @scroll="updateCounters"
+        class="w-full max-w-700px h-full relative overflow-auto snap-x  flex !flex-nowrap rounded-xl snap-mandatory"
       >
         <img
-          v-for="(image, index) in images" :key="index" :src="image"
+          :src="images[currentImg - 1]"
           class="w-full h-full sticky left-0 flex-shrink-0 object-cover snap-center"
         >
       </section>

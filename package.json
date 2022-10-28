@@ -12,8 +12,10 @@
   "dependencies": {
     "@lottiefiles/lottie-player": "^1.5.7",
     "@quasar/extras": "^1.15.1",
+    "@types/greensock": "^1.15.32",
     "@vueuse/core": "^9.1.0",
     "axios": "^0.27.2",
+    "gsap": "^3.11.3",
     "moment": "^2.29.4",
     "pinia": "^2.0.17",
     "quasar": "^2.7.7",

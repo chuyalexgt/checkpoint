@@ -20,7 +20,8 @@
 //     },
 //   },
 // ]
-const probe = 'Lorem ipsum dolor sit amet, con Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis reprehenderit illo deleniti est? Commodi fugiat maxime unde expedita quaerat odio dolor. Nobis suscipit est laudantium, voluptatibus accusamus perferendis dignissimos molestias.'
+// const probe = 'Lorem ipsum dolor sit amet, con Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis reprehenderit illo deleniti est? Commodi fugiat maxime unde expedita quaerat odio dolor. Nobis suscipit est laudantium, voluptatibus accusamus perferendis dignissimos molestias.'
+const input = ref(0)
 </script>
 
 <template>
@@ -33,6 +34,8 @@ const probe = 'Lorem ipsum dolor sit amet, con Lorem ipsum dolor sit amet consec
     </RequestCard>
     <CircularMenu /> -->
     <!-- <Carrusel :images="['https://picsum.photos/500', 'https://picsum.photos/501']" /> -->
-    <PostCard title="Publicacion de ejemplo" :text="`${probe}${probe}${probe} ${probe}${probe}${probe}`" author="fulanito" />
+    <!-- <PostCard title="Publicacion de ejemplo" :text="`${probe}${probe}${probe} ${probe}${probe}${probe}`" author="fulanito" /> -->
+    <input v-model="input" type="number">
+    <NumberCounter :number="input" />
   </section>
 </template>

@@ -20,8 +20,7 @@
 }
 *::-webkit-scrollbar-track {
   background-color: #84c6cf00;
-  -webkit-box-shadow: 0px 1px 15px 0px rgba(0, 0, 0, 0.62);
-  box-shadow: 0px 1px 15px 0px rgba(0, 0, 0, 0.62);
+
 }
 *::-webkit-scrollbar-thumb {
   border-radius: 7px;
