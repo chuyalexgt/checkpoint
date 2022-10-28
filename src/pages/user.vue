@@ -21,11 +21,24 @@
 //   },
 // ]
 // const probe = 'Lorem ipsum dolor sit amet, con Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis reprehenderit illo deleniti est? Commodi fugiat maxime unde expedita quaerat odio dolor. Nobis suscipit est laudantium, voluptatibus accusamus perferendis dignissimos molestias.'
-const input = ref(0)
+// const input = ref(0)
+const list = [
+  { msg: 'Bruce Lee' },
+  { msg: 'Jackie Chan' },
+  { msg: 'Chuck Norris' },
+  { msg: 'Jet Li' },
+  { msg: 'Kung Fury' },
+]
+
+const query = ref('')
+
+const computedList = computed(() => {
+  return list.filter(item => item.msg.toLowerCase().includes(query.value))
+})
 </script>
 
 <template>
-  <section flex>
+  <section flex flex-col>
     <!-- <RequestCard title="prueba" subtitle="example subtitle" icon="i-carbon-error" :actions="actions">
       <template #body>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod Lorem ipsum dolor, sit amet consectetur
@@ -35,7 +48,18 @@ const input = ref(0)
     <CircularMenu /> -->
     <!-- <Carrusel :images="['https://picsum.photos/500', 'https://picsum.photos/501']" /> -->
     <!-- <PostCard title="Publicacion de ejemplo" :text="`${probe}${probe}${probe} ${probe}${probe}${probe}`" author="fulanito" /> -->
-    <input v-model="input" type="number">
-    <NumberCounter :number="input" />
+    <!-- <input v-model="input" type="number">
+    <NumberCounter :number="input" /> -->
+    <input v-model="query">
+    <AnimatedList>
+      <div
+        v-for="(item, index) in computedList"
+        :key="item.msg"
+        class="w-200px bg-teal-100 border-teal-400 border-4 rounded-lg gap-4 h-45px"
+        :data-index="index"
+      >
+        {{ item.msg }}
+      </div>
+    </AnimatedList>
   </section>
 </template>
