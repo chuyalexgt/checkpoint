@@ -17,6 +17,7 @@ declare module '@vue/runtime-core' {
     Header: typeof import('./src/components/Header.vue')['default']
     Hero: typeof import('./src/components/Home/Hero.vue')['default']
     InteractionBtns: typeof import('./src/components/feed/InteractionBtns.vue')['default']
+    MaxCard: typeof import('./src/components/globals/MaxCard.vue')['default']
     NumberCounter: typeof import('./src/components/globals/NumberCounter.vue')['default']
     PostCard: typeof import('./src/components/feed/PostCard.vue')['default']
     RequestCard: typeof import('./src/components/globals/RequestCard.vue')['default']

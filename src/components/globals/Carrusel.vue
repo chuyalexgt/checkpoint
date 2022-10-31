@@ -36,17 +36,17 @@ onMounted(() => {
   <main v-if="images.length > 0" class="h-72 w-full max-w-[500px] relative flex items-center">
     <button
       v-if="currentImg !== 1"
-      class="w-10 h-10 rounded-full bg-gray-200/30 dark:bg-gray-800/30 shadow-md hide sm:flex justify-center items-center absolute left-3 z-10 hover:scale-110 hover:left-1 transition-all" @click="prevImg"
+      class="w-10 h-10 rounded-full bg-gray-200/80 dark:bg-gray-800/80 shadow-md hide sm:flex justify-center items-center absolute left-3 z-10 hover:scale-110 hover:left-1 transition-all" @click="prevImg"
     >
       <div i-carbon-chevron-left class=" text-2xl mr-1" />
     </button>
     <button
       v-if="currentImg !== totalImg"
-      class="w-10 h-10 rounded-full bg-gray-200/30 dark:bg-gray-800/30 shadow-md hide sm:flex justify-center items-center absolute right-3 z-10 hover:scale-110 hover:right-1 transition-all" @click="nextImg"
+      class="w-10 h-10 rounded-full bg-gray-200/80 dark:bg-gray-800/80 shadow-md hide sm:flex justify-center items-center absolute right-3 z-10 hover:scale-110 hover:right-1 transition-all" @click="nextImg"
     >
       <div i-carbon-chevron-right class=" text-2xl ml-1" />
     </button>
-    <div class="w-14 h-8 rounded-md bg-gray-200/30 dark:bg-gray-800/30 flex justify-center items-center absolute right-3 z-10 bottom-0 left-[50%] translate-[-50%]">
+    <div class="w-14 h-8 rounded-md bg-gray-200/80 dark:bg-gray-800/80 flex justify-center items-center absolute right-3 z-10 bottom-0 left-[50%] translate-[-50%]">
       {{ `${currentImg} / ${totalImg}` }}
     </div>
     <section

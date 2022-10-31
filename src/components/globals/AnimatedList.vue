@@ -36,7 +36,7 @@ const onLeave = (el: any, done: any) => {
     <TransitionGroup
       tag="section"
       :css="false"
-      class="flex flex-col gap-1 relative"
+      class="flex flex-col gap-4 relative"
       @before-enter="onBeforeEnter"
       @enter="onEnter"
       @leave="onLeave"
