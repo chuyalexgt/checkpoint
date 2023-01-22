@@ -40,7 +40,7 @@
 // const printPdf = () => {
 //   window.print()
 // }
-const dialog = ref(false)
+const dialog = ref(false);
 </script>
 
 <template>
@@ -69,8 +69,7 @@ const dialog = ref(false)
     </AnimatedList>
     <MaxCard />
     <q-btn color="primary" icon="check" label="print" @click="printPdf" /> -->
-    <q-btn color="primary" icon="check" label="OK" relative z-99999 @click="dialog = !dialog" />
-    <Dialog :trigger="dialog" />
-    <q-btn color="primary" icon="check" label="OK" @click="true" />
+    <q-btn color="primary" icon="check" label="OK" @click="dialog = true" />
+    <FullscreenDialog v-model="dialog" />
   </section>
 </template>
