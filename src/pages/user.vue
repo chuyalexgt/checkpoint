@@ -21,7 +21,7 @@
 //   },
 // ]
 // const probe = 'Lorem ipsum dolor sit amet, con Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis reprehenderit illo deleniti est? Commodi fugiat maxime unde expedita quaerat odio dolor. Nobis suscipit est laudantium, voluptatibus accusamus perferendis dignissimos molestias.'
-// const input = ref(0)
+const input = ref(0)
 // const list = [
 //   { msg: 'Bruce Lee' },
 //   { msg: 'Jackie Chan' },
@@ -40,7 +40,7 @@
 // const printPdf = () => {
 //   window.print()
 // }
-const dialog = ref(false);
+const dialog = ref(false)
 </script>
 
 <template>
@@ -54,8 +54,6 @@ const dialog = ref(false);
     <CircularMenu />
     <Carrusel :images="['https://picsum.photos/500', 'https://picsum.photos/501']" />
     <PostCard title="Publicacion de ejemplo" :text="`${probe}${probe}${probe} ${probe}${probe}${probe}`" author="fulanito" />
-    <input v-model="input" type="number">
-    <NumberCounter :number="input" :decimals="0" />
     <input v-model="query">
     <AnimatedList>
       <div
@@ -70,6 +68,9 @@ const dialog = ref(false);
     <MaxCard />
     <q-btn color="primary" icon="check" label="print" @click="printPdf" /> -->
     <q-btn color="primary" icon="check" label="OK" @click="dialog = true" />
-    <FullscreenDialog v-model="dialog" />
+    <FullscreenDialog v-model="dialog" title="centros de trabajo">
+      <input v-model="input" type="number">
+      <NumberCounter :number="input" :decimals="0" />
+    </FullscreenDialog>
   </section>
 </template>
