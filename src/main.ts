@@ -5,6 +5,7 @@ import routes from 'virtual:generated-pages'
 import { createPinia } from 'pinia'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
+import Vue3Lottie from 'vue3-lottie'
 import App from './App.vue'
 
 import '@unocss/reset/tailwind.css'
@@ -13,11 +14,11 @@ import 'uno.css'
 import './boot/index'
 
 import '@quasar/extras/material-icons/material-icons.css'
-import '@lottiefiles/lottie-player'
 import 'quasar/src/css/index.sass'
 import { useMainStore } from './stores/mainStore'
 
 const app = createApp(App)
+app.use(Vue3Lottie)
 app.use(Quasar, {
   plugins: {
     Loading,

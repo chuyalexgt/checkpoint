@@ -42,7 +42,7 @@ onUnmounted(() => {
 
 <template>
   <section>
-    <div ref="wrapper" class="w-full h-1  relative rounded-lg" :class="baseColor">
+    <div ref="wrapper" class="w-full h-1 relative rounded-lg" :class="baseColor">
       <div class="absolute top-0 left-50% h-1 w-0  transition-all duration-500 ease-out rounded-r-lg " :class="[{ 'w-1/2': loaded }, contrastColor]" />
       <div class="absolute top-0 right-50% h-1 w-0  transition-all duration-500 ease-out rounded-l-lg" :class="[{ 'w-1/2': loaded }, contrastColor]" />
       <div class="absolute-center dark:text-dark-100 w-fit max-w-250px md:max-w-50% min-h-10 whitespace-pre-line  px-3 bg-inherit transition-all duration-500 ease-out rounded-lg flex justify-center items-center font-bold capitalize text-lg" :class="titleClass">

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import lottie from '~/../assets/Hero_City_lottie.json'
 </script>
 
 <template>
@@ -17,7 +18,7 @@
         </router-link>
       </div>
       <div class="w-2/3 md:w-1/3">
-        <lottie-player src="~/../assets/Hero_City_lottie.json" autoplay loop bounce speed="0.5" />
+        <Vue3Lottie :animation-data="lottie" :speed="0.5" :delay="2000" aspect-square />
       </div>
     </div>
   </section>
