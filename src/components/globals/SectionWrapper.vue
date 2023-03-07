@@ -49,10 +49,20 @@ onUnmounted(() => {
         {{ title }}
       </div>
     </div>
-    <transition name="slide" mode="out-in">
+    <transition name="fade" mode="out-in">
       <div v-if="loaded" px-2 pb-4 pt-10>
         <slot />
       </div>
     </transition>
   </section>
 </template>
+
+<style scoped>
+.fade-enter-active, .fade-leave-active{
+  transition: opacity 0.6s;
+}
+
+.fade-enter-from, .fade-leave-to{
+  opacity: 0;
+}
+</style>

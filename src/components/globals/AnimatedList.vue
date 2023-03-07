@@ -32,7 +32,7 @@ const onLeave = (el: any, done: any) => {
 </script>
 
 <template>
-  <section w-fit>
+  <section w-fit transition-all>
     <TransitionGroup
       tag="section"
       :css="false"
