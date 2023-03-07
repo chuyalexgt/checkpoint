@@ -11,7 +11,6 @@ declare module '@vue/runtime-core' {
     AsyncBtn: typeof import('./src/components/globals/AsyncBtn.vue')['default']
     Carrusel: typeof import('./src/components/globals/Carrusel.vue')['default']
     CircularMenu: typeof import('./src/components/globals/CircularMenu.vue')['default']
-    Dialog: typeof import('quasar')['Dialog']
     FeatureCard: typeof import('./src/components/Home/FeatureCard.vue')['default']
     Features: typeof import('./src/components/Home/Features.vue')['default']
     Footer: typeof import('./src/components/Footer.vue')['default']
@@ -25,6 +24,8 @@ declare module '@vue/runtime-core' {
     RequestCard: typeof import('./src/components/globals/RequestCard.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    SectionDivider: typeof import('./src/components/globals/SectionWrapper.vue')['default']
     SectionOpts: typeof import('./src/components/globals/SectionOpts.vue')['default']
+    SectionWrapper: typeof import('./src/components/globals/SectionWrapper.vue')['default']
   }
 }

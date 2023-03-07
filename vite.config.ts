@@ -85,6 +85,7 @@ export default defineConfig({
         }],
         ['autogrid', { 'display': 'grid', 'grid-template-columns': 'repeat(auto-fit, minmax(100px,1fr))', 'gap': '10px' }],
         ['hide', { display: 'none' }],
+        ['center', { position: 'absolute', top: '50%', right: '50%', translate: '50% -50%' }],
       ],
     }),
   ],
