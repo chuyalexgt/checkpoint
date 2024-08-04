@@ -1,14 +1,14 @@
 /// <reference types="vitest" />
 
-import { resolve } from 'path'
-import { defineConfig } from 'vite'
+import { quasar } from '@quasar/vite-plugin'
 import Vue from '@vitejs/plugin-vue'
-import Pages from 'vite-plugin-pages'
-import Components from 'unplugin-vue-components/vite'
-import AutoImport from 'unplugin-auto-import/vite'
+import { resolve } from 'path'
 import Unocss from 'unocss/vite'
-import { quasar, transformAssetUrls } from '@quasar/vite-plugin'
+import AutoImport from 'unplugin-auto-import/vite'
 import { QuasarResolver } from 'unplugin-vue-components/resolvers'
+import Components from 'unplugin-vue-components/vite'
+import { defineConfig } from 'vite'
+import Pages from 'vite-plugin-pages'
 import { shortcuts } from './shortcuts'
 
 const freeRoutes = ['/', '/auth', 'login', 'signin'] // Rutas que no requiren validacion
@@ -21,8 +21,6 @@ export default defineConfig({
   },
   plugins: [
     Vue({
-      reactivityTransform: true,
-      template: { transformAssetUrls },
     }),
     quasar({
       sassVariables: 'src/quasar-variables.sass',
