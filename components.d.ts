@@ -24,7 +24,6 @@ declare module '@vue/runtime-core' {
     RequestCard: typeof import('./src/components/globals/RequestCard.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
-    SectionDivider: typeof import('./src/components/globals/SectionWrapper.vue')['default']
     SectionOpts: typeof import('./src/components/globals/SectionOpts.vue')['default']
     SectionWrapper: typeof import('./src/components/globals/SectionWrapper.vue')['default']
   }

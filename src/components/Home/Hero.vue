@@ -10,7 +10,7 @@ import lottie from '~/../assets/Hero_City_lottie.json'
           Encuentra tu comunidad
         </p>
         <p text="~ 2xl warm-gray-700" font="semibold">
-          Estudiantes de distintas carrera y universidades, todos reunidos en un mismo lugar
+          Estudiantes de distintas carreras y universidades, todos reunidos en un mismo lugar.
         </p>
 
         <router-link primary_btn text-2xl mt-8 to="/auth/login">
@@ -18,7 +18,7 @@ import lottie from '~/../assets/Hero_City_lottie.json'
         </router-link>
       </div>
       <div class="w-2/3 md:w-1/3">
-        <Vue3Lottie :animation-data="lottie" :speed="0.5" :delay="2000" aspect-square />
+        <Vue3Lottie :animation-data="lottie" :speed="0.5" :delay="2000" aspect-square :loop="false" />
       </div>
     </div>
   </section>
